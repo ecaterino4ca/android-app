@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Moviebile</string>
+    <string name="input_email">Email</string>
+    <string name="input_password">Password</string>
+    <string name="button_login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="error_incorrect_password">Incorrect Password</string>
+    <string name="error_invalid_email">Please enter a valid email address</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="error_invalid_password">Please enter a more complex password</string>
+</resources>
