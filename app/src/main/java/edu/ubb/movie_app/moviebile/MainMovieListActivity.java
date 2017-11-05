@@ -10,10 +10,14 @@ import android.database.Cursor;
 import android.support.v4.widget.SimpleCursorAdapter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,8 +27,11 @@ public class MainMovieListActivity extends Activity {
 
     private ListView mListView;
     List<Movie> movieList;
+    private Button report_button;
+    private EditText input_bug;
+    private String reportText;
 
-    private MovieRepository movieRepository = new MovieRepositoryImpl();
+    private MovieRepositoryImpl movieRepository = MovieRepositoryImpl.getInstance();
 
     // This is the Adapter being used to display the list's data
     SimpleCursorAdapter mAdapter;
@@ -60,6 +67,18 @@ public class MainMovieListActivity extends Activity {
             }
 
         });
+
+        input_bug = findViewById(R.id.input_bug);
+        report_button = findViewById(R.id.report_button);
+        report_button.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        sendEmail();
+                    }
+                }
+        );
+
     }
 
     private void selectOneItem(Context context, AdapterView<?> adapterView, View view, int i, long l){
@@ -75,6 +94,27 @@ public class MainMovieListActivity extends Activity {
         detailIntent.putExtra("director", selectedMovie.getDirector());
 
         startActivity(detailIntent);
+    }
+
+    public void sendEmail() {
+        reportText = input_bug.getText().toString();
+        View focusView = null;
+
+        if (TextUtils.isEmpty(reportText)) {
+            input_bug.setError(getString(R.string.error_field_required));
+            focusView = input_bug;
+        } else {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("message/rfc822");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"ecaterina.carazan@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Report a bug");
+            intent.putExtra(Intent.EXTRA_TEXT, input_bug.getText());
+            intent.setPackage("com.google.android.gm");
+            if (intent.resolveActivity(getPackageManager()) != null)
+                startActivity(intent);
+            else
+                Toast.makeText(this, "Gmail App is not installed", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

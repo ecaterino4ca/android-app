@@ -10,4 +10,7 @@
     <string name="error_invalid_email">Please enter a valid email address</string>
     <string name="error_field_required">This field is required</string>
     <string name="error_invalid_password">Please enter a more complex password</string>
+    <string name="report">Report a bug</string>
+    <string name="reportText">Bug details</string>
+    <string name="save">Save changes</string>
 </resources>

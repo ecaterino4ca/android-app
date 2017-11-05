@@ -9,4 +9,10 @@ import java.util.List;
 public interface MovieRepository {
 
     List<Movie> getAllMovies();
+
+    Movie findByTitle(String title);
+
+    void update(Movie movie);
+
+    MovieRepository getInstance();
 }
