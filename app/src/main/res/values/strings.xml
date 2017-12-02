@@ -12,5 +12,14 @@
     <string name="error_invalid_password">Please enter a more complex password</string>
     <string name="report">Report a bug</string>
     <string name="reportText">Bug details</string>
-    <string name="save">Save changes</string>
+    <string name="save">Save</string>
+    <string name="insert">Insert</string>
+    <string name="title">title</string>
+    <string name="year">year</string>
+    <string name="rating">rating</string>
+    <string name="genre">genre</string>
+    <string name="director">director</string>
+    <string name="cast">cast</string>
+    <string name="delete">Delete</string>
+    <string name="statistics">statistics</string>
 </resources>
