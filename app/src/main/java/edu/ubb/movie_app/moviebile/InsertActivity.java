@@ -14,7 +14,7 @@ import android.widget.EditText;
 public class InsertActivity extends Activity {
 
     private Button save_insert_button;
-    private MovieRepositoryImpl movieRepository = new MovieRepositoryImpl(this);
+    private MovieRepositoryImpl movieRepository = new MovieRepositoryImpl();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +47,12 @@ public class InsertActivity extends Activity {
         EditText castTextView = findViewById(R.id.movie_insert_cast);
         EditText genresTextView = findViewById(R.id.movie_insert_genre);
 
-        Movie movie = new Movie(titleTextView.getText().toString(), yearTextView.getText().toString(), Integer.valueOf(ratingTextView.getText().toString()),
+        Movie movie = new Movie(titleTextView.getText().toString(), Integer.valueOf(yearTextView.getText().toString()), Integer.valueOf(ratingTextView.getText().toString()),
                 genresTextView.getText().toString(),castTextView.getText().toString(), directorTextView.getText().toString());
 
         movieRepository.insert(movie);
 
-        Intent myIntent = new Intent(InsertActivity.this, MainMovieListActivity.class);
+        Intent myIntent = new Intent(InsertActivity.this, AdminMoviesActivity.class);
         InsertActivity.this.startActivity(myIntent);
     }
 }

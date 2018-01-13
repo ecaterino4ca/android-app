@@ -5,15 +5,15 @@ package edu.ubb.movie_app.moviebile;
  */
 
 public class Movie {
-    private long id;
-    private String title;
-    private String year;
-    private Integer rating;
-    private String genres;
-    private String cast;
-    private String director;
+    String id;
+    String title;
+    Integer year;
+    Integer rating;
+    String genres;
+    String cast;
+    String director;
 
-    public Movie(String title, String year, Integer rating, String genres, String cast, String director) {
+    public Movie(String title, Integer year, Integer rating, String genres, String cast, String director) {
         this.title = title;
         this.year = year;
         this.rating = rating;
@@ -25,11 +25,11 @@ public class Movie {
     public Movie() {
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -41,11 +41,11 @@ public class Movie {
         this.title = title;
     }
 
-    public String getYear() {
+    public Integer getYear() {
         return year;
     }
 
-    public void setYear(String year) {
+    public void setYear(Integer year) {
         this.year = year;
     }
 

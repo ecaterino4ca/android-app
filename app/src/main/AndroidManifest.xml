@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ChooserActivity">ChooserActivity
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,9 +17,29 @@
             </intent-filter>
         </activity>
 
+        <activity
+            android:name=".LoginActivity" />
+        <activity
+            android:name=".GoogleSignInActivity"
+            android:windowSoftInputMode="stateAlwaysHidden" />
+
         <activity android:name=".MainMovieListActivity" />
         <activity android:name=".MovieDetailActivity" />
         <activity android:name=".InsertActivity"/>
+        <activity android:name=".AdminMoviesActivity"/>
+        <activity android:name=".FreeUserMoviesActivity"/>
+        <service
+            android:name=".FirebaseServices.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
+            </intent-filter>
+        </service>
+        <service
+            android:name=".FirebaseServices.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

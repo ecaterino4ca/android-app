@@ -7,60 +7,86 @@
     android:orientation="vertical"
     tools:context="edu.ubb.movie_app.moviebile.MainMovieListActivity">
 
-    <ListView
-        android:id="@+id/list"
-        tools:layout_editor_absoluteY="8dp"
-        tools:layout_editor_absoluteX="8dp"
-        android:layout_weight="8"
-        android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_height="match_parent">
-    </ListView>
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="247dp"
+        android:layout_height="77dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:onClick="exitApplication"
+        android:text="Sign Out"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/buttonMyMovies"
+        android:layout_width="277dp"
+        android:layout_height="67dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:onClick="viewMovies"
+        android:text="All Movies"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!--<ListView-->
+        <!--android:id="@+id/list"-->
+        <!--tools:layout_editor_absoluteY="8dp"-->
+        <!--tools:layout_editor_absoluteX="8dp"-->
+        <!--android:layout_weight="8"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_height="match_parent">-->
+    <!--</ListView>-->
 
 
-        <EditText
-        android:id="@+id/input_bug"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/list"
-        android:inputType="text"
-        android:textColor="#7B869B"
-        android:textColorHint="#cccccc"
-        android:maxLength="20"
-        android:maxLines="1"
-        android:hint="@string/reportText" />
+        <!--<EditText-->
+        <!--android:id="@+id/input_bug"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/list"-->
+        <!--android:inputType="text"-->
+        <!--android:textColor="#7B869B"-->
+        <!--android:textColorHint="#cccccc"-->
+        <!--android:maxLength="20"-->
+        <!--android:maxLines="1"-->
+        <!--android:hint="@string/reportText" />-->
 
-        <LinearLayout
-            android:id="@+id/top_buttons"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal" >
+        <!--<LinearLayout-->
+            <!--android:id="@+id/top_buttons"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:orientation="horizontal" >-->
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/report_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:shadowRadius="5"
-                android:text="@string/report"/>
+            <!--<android.support.v7.widget.AppCompatButton-->
+                <!--android:id="@+id/report_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:shadowRadius="5"-->
+                <!--android:text="@string/report"/>-->
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/insert_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:shadowRadius="5"
-                android:text="@string/insert"/>
+            <!--<android.support.v7.widget.AppCompatButton-->
+                <!--android:id="@+id/insert_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:shadowRadius="5"-->
+                <!--android:text="@string/insert"/>-->
 
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/chart_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#ffffff"
-                android:shadowRadius="5"
-                android:text="@string/statistics"/>
+            <!--<android.support.v7.widget.AppCompatButton-->
+                <!--android:id="@+id/chart_button"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:shadowRadius="5"-->
+                <!--android:text="@string/statistics"/>-->
 
-        </LinearLayout>
+        <!--</LinearLayout>-->
 
     <!--</LinearLayout>-->
 

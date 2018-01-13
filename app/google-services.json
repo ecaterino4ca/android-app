@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1056322817495",
+    "firebase_url": "https://moviebilefirebase.firebaseio.com",
+    "project_id": "moviebilefirebase",
+    "storage_bucket": "moviebilefirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056322817495:android:3d1cf53d6883aae4",
+        "android_client_info": {
+          "package_name": "edu.ubb.movie_app.moviebile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1056322817495-dghagj0dclgcud604f1qvh6tpcj1i7k7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.ubb.movie_app.moviebile",
+            "certificate_hash": "1ea96f3396b2a8e9a9be63e1944453fd7408856f"
+          }
+        },
+        {
+          "client_id": "1056322817495-fpqr04l3srcv09dq0973cuea5s4hht43.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8_0xyc1Du4VTZaERy7oJHYj15NZWVRqs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1056322817495-fpqr04l3srcv09dq0973cuea5s4hht43.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

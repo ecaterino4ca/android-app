@@ -15,9 +15,9 @@ public class MovieHelper {
         Movie p = null;
         if (cursor != null) {
             p = new Movie();
-            p.setId(cursor.getLong(cursor.getColumnIndex(DBContract.MovieEntry._ID)));
+            p.setId(cursor.getString(cursor.getColumnIndex(DBContract.MovieEntry._ID)));
             p.setTitle(cursor.getString(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_TITLE)));
-            p.setYear(cursor.getString(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_YEAR)));
+            p.setYear(cursor.getInt(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_YEAR)));
             p.setGenres(cursor.getString(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_GENRES)));
             p.setRating(cursor.getInt(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_RATING)));
             p.setCast(cursor.getString(cursor.getColumnIndex(DBContract.MovieEntry.COLUMN_NAME_CAST)));

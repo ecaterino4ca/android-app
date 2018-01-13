@@ -21,19 +21,22 @@ public class MovieDetailActivity extends Activity {
 
     private Button save_button;
     private Button delete_button;
-    private MovieRepositoryImpl movieRepository = new MovieRepositoryImpl(this);
+    private MovieRepositoryImpl movieRepository = new MovieRepositoryImpl();
+    private String id = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_detail);
 
+//        index = Integer.valueOf(this.getIntent().getExtras().getString("index"));
         String title = this.getIntent().getExtras().getString("title");
-        String year = this.getIntent().getExtras().getString("year");
+        String year =String.valueOf(this.getIntent().getExtras().getInt("year"));
         String rating = String.valueOf(this.getIntent().getExtras().getInt("rating"));
         String genres = this.getIntent().getExtras().getString("genres");
         String cast = this.getIntent().getExtras().getString("cast");
         String director = this.getIntent().getExtras().getString("director");
+        id = this.getIntent().getExtras().getString("id");
 
         TextView titleTextView = findViewById(R.id.movie_list_title);
         EditText yearTextView = findViewById(R.id.movie_list_year);
@@ -104,9 +107,10 @@ public class MovieDetailActivity extends Activity {
         EditText castTextView = findViewById(R.id.movie_list_cast);
         final TextView genresTextView = findViewById(R.id.movie_list_genre);
 
-        Movie movie = new Movie(titleTextView.getText().toString(), yearTextView.getText().toString(), Integer.valueOf(ratingTextView.getText().toString()),
+        Movie movie = new Movie(titleTextView.getText().toString(), Integer.valueOf(yearTextView.getText().toString()), Integer.valueOf(ratingTextView.getText().toString()),
                 genresTextView.getText().toString(),castTextView.getText().toString(), directorTextView.getText().toString());
 
+        movie.setId(id);
         movieRepository.update(movie);
 
         Intent myIntent = new Intent(MovieDetailActivity.this, MainMovieListActivity.class);
@@ -115,7 +119,18 @@ public class MovieDetailActivity extends Activity {
 
     private void deleteData(){
         TextView titleTextView = findViewById(R.id.movie_list_title);
-        movieRepository.delete(titleTextView.getText().toString());
+        EditText yearTextView = findViewById(R.id.movie_list_year);
+        EditText ratingTextView = findViewById(R.id.movie_list_rating);
+        EditText directorTextView = findViewById(R.id.movie_list_director);
+        EditText castTextView = findViewById(R.id.movie_list_cast);
+        final TextView genresTextView = findViewById(R.id.movie_list_genre);
+
+        Movie movie = new Movie(titleTextView.getText().toString(), Integer.valueOf(yearTextView.getText().toString()), Integer.valueOf(ratingTextView.getText().toString()),
+                genresTextView.getText().toString(),castTextView.getText().toString(), directorTextView.getText().toString());
+
+        movie.setId(id);
+
+        movieRepository.delete(movie);
         Toast.makeText(this,"Movie Removed",Toast.LENGTH_SHORT).show();
 
         Intent myIntent = new Intent(MovieDetailActivity.this, MainMovieListActivity.class);
